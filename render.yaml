@@ -1,7 +1,0 @@
-services:
-  - type: web
-    name: flask-quiz
-    env: python
-    buildCommand: ""
-    startCommand: gunicorn app:app
-    plan: free
