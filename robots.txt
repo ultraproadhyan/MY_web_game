@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /path/to/your/code/  # Ye tumhare code ko block karega
+
+Allow: /  # Tumhare public website ko allow karega
