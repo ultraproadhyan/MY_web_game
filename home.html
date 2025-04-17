@@ -41,7 +41,8 @@
 
         <!-- Center Add Button (GIF-style) -->
         <li class="add-button">
-            <a class="dynamic-link" id="button1" href="#">Go</a>
+           <a class="dynamic-link" href="#">Go</a>
+
         </li>
         
 
@@ -198,30 +199,22 @@
     <!-- JavaScript function to change the link -->
    <!-- JavaScript to change all buttons' link dynamically without visual changes -->
     <script>
-        // Global link variable
-        var currentLink = "https://cartoon.pythonanywhere.com/";
+       // Function to update the link for all buttons with a specific class or attribute
+function updateAllLinks(newLink) {
+    // Get all <a> elements that need the updated link
+    var buttons = document.querySelectorAll('a.dynamic-link');
 
-        // Function to update the link for all buttons without visible change
-        function updateLinks(newLink) {
-            // Update the global link variable
-            currentLink = newLink;
+    // Loop through all buttons and update their href attribute
+    buttons.forEach(function(button) {
+        button.setAttribute('href', newLink);
+    });
+}
 
-            // Get all elements with class 'dynamic-link'
-            var buttons = document.querySelectorAll('.dynamic-link');
-            
-            // Loop through all buttons and update their action without changing appearance
-            buttons.forEach(function(button) {
-                button.onclick = function() {
-                    window.location.href = currentLink; // Redirect to new link
-                };
-                // No visible change in button text or style
-            });
-        }
+// Example: Use the function to change the link dynamically
+setTimeout(function() {
+    updateAllLinks('https://cartoon.pythonanywhere.com/'); // Update link to the desired URL
+}, 3000); // After 3 seconds, all links will be updated
 
-        // Example: Call updateLinks function after 3 seconds to change the link
-        setTimeout(function() {
-            updateLinks("https://cartoon.pythonanywhere.com/"); // Update link to local HTML page
-        }, 3000); // Change link after 3 seconds (you can trigger this based on any event)
     </script>
 </body>
 </html>
