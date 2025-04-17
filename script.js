@@ -1,7 +1,6 @@
-//  button link change 
-// button-config.js
-const BUTTON_CONFIG = {
-    link: "https://cartoon.pythonanywhere.com/"  // Change this to update all buttons
+// config.js
+const BUTTON_LINKS = {
+    mainButton: "videos.html",
     
 };
 
