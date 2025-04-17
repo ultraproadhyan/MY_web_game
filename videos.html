@@ -1,187 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Quiz Battle Video Hub</title>
-    <link rel="stylesheet" href="style.css">
-     <!-- Google Fonts -->
-     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-     <!-- Font Awesome for icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Quiz Battle Video Hub</title>
+  <link rel="icon" type="image/png" href="/all_assest/logo2.png" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 </head>
+
 <body>
-     <!-- Desktop Navbar -->
-     <nav class="navbar">
-        <div class="logo-container">
-            <div ><img class="logo" src="all_assest/logo2.png" alt="logo"></div>
-            <div class="app-name">My_Web_Game</div>
-        </div>
-        
-        <div class="nav-links">
-            <a href="home.html"><i class="fas fa-home"></i> Home</a>
-            <a href="download.html" ><i class="fas fa-download"></i> Download App</a>
-            <a href="videos.html"  class="active"><i class="fas fa-video"></i> Videos</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-        </div>
-        
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
-    
-    <!-- Mobile Navbar (Bottom) -->
-    <nav class="mobile-navbar">
-        <ul class="mobile-nav-links">
-            <li><a href="home.html" ><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="download.html" ><i class="fas fa-download"></i> Download</a></li>
-            <li><a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-        </ul>
-    </nav>
-     <!-- Video Header -->
-     <header class="video-header">
-        <div class="container">
-            <h1>Daily Quiz Battle Video Hub</h1>
-            <p>Watch, learn, and win with our collection of tutorial videos, guides, and user experiences</p>
-        </div>
-    </header>
-    
-    <!-- Featured Videos -->
-    <section class="featured-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Videos</h2>
-            </div>
-            
-            <div class="featured-grid">
-                <!-- Video 1 -->
-                <div class="featured-card" data-video-id="dQw4w9WgXcQ">
-                    <div class="featured-badge">Tutorial</div>
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="How to Play Daily Quiz Battle">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>How to Play Daily Quiz Battle - Complete Guide</h3>
-                        <p>Learn how to register, participate, and win cash prizes in our daily quiz competition.</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 5:30</span>
-                            <span><i class="far fa-eye"></i> 12K views</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Video 2 -->
-                <div class="featured-card" data-video-id="9bZkp7q19f0">
-                    <div class="featured-badge">Winner Story</div>
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Winner Experience">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Rahul's Winning Experience - ₹5000 in One Week!</h3>
-                        <p>Hear from Rahul how he won multiple times and his strategy for daily quiz battles.</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 8:15</span>
-                            <span><i class="far fa-eye"></i> 8.5K views</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Video 3 -->
-                <div class="featured-card" data-video-id="kJQP7kiw5Fk">
-                    <div class="featured-badge">Tips & Tricks</div>
-                    <div class="video-thumbnail">
-                        <img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Quiz Tips">
-                        <div class="play-button">
-                            <i class="fas fa-play"></i>
-                        </div>
-                    </div>
-                    <div class="video-info">
-                        <h3>Top 10 Tips to Win Daily Quiz Battle Every Day</h3>
-                        <p>Expert strategies to improve your chances of winning the daily quiz competition.</p>
-                        <div class="video-meta">
-                            <span><i class="far fa-clock"></i> 6:45</span>
-                            <span><i class="far fa-eye"></i> 15K views</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Video Categories -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Browse Videos</h2>
-            </div>
-            
-            <div class="category-tabs">
-                <div class="category-tab active" data-category="all">All Videos</div>
-                <div class="category-tab" data-category="tutorials">Tutorials</div>
-                <div class="category-tab" data-category="shorts">Shorts</div>
-                <div class="category-tab" data-category="users">User Videos</div>
-                <div class="category-tab" data-category="guides">Guides</div>
-            </div>
-            
-            <div class="videos-grid">
-                <!-- Video items will be loaded here by JavaScript -->
-            </div>
-            
-            <div class="load-more" style="text-align: center; margin-top: 40px;">
-                <button id="loadMore" class="cta-button" style="padding: 12px 30px; font-size: 1rem;">Load More Videos</button>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Featured Creator -->
-    <section class="creator-section">
-        <div class="container">
-            <div class="creator-card">
-                <div class="creator-image">
-                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Featured Creator">
-                </div>
-                <div class="creator-content">
-                    <h3>Featured Creator: Amit Sharma</h3>
-                    <p>Amit has created over 50 tutorial videos for Daily Quiz Battle with more than 200K combined views. His clear explanations and practical tips have helped thousands of players improve their game.</p>
-                    <div class="creator-social">
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Want to Get Featured?</h2>
-            <p>Share your winning moments, tips, or feedback videos with us. The best videos each week get featured on our page and receive special rewards!</p>
-            <a href="https://wa.me/YOUR_NUMBER" class="cta-button">Submit Your Video</a>
-        </div>
-    </section>
-    
-    <!-- Video Modal -->
-    <div class="video-modal">
-        <div class="modal-content">
-            <span class="close-modal"><i class="fas fa-times"></i></span>
-            <div class="video-container">
-                <iframe id="ytplayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
+
+  <!-- 🌐 Desktop Navbar -->
+  <nav class="navbar">
+    <div class="logo-container">
+      <img class="logo" src="all_assest/logo2.png" alt="logo" />
+      <div class="app-name">My_Web_Game</div>
     </div>
-    
+    <div class="nav-links">
+      <a href="home.html" ><i class="fas fa-home"></i> Home</a>
+      <a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a>
+      <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
+      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+  </nav>
+
+  <!-- 📱 Mobile Bottom Navbar -->
+  <nav class="mobile-navbar">
+    <ul class="mobile-nav-links">
+        <li><a href="home.html" ><i class="fas fa-home"></i></a></li>
+        <li><a href="videos.html"><i class="fas fa-video"></i></a></li>
+        
+        <!-- Center Go Button -->
+        <li class="add-button">
+            <a id="dynamicButton" href="#">Go</a>
+        </li>
+
+        <li><a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i></a></li>
+        <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i></a></li>
+    </ul>
+</nav>
+
+  <!-- 🔥 Header Section -->
+  <header class="video-header">
+    <div class="container">
+      <h1>Daily Quiz Battle Video Hub</h1>
+      <p>Watch, learn, and win with our collection of tutorial videos, guides, and user experiences</p>
+    </div>
+  </header>
+
+  <!-- 🎥 Featured Videos Section -->
+  <section class="featured-section">
+    <div class="container">
+      <div class="section-title"><h2>Featured Videos</h2></div>
+      <div class="featured-grid">
+
+        <!-- Video Card Template -->
+        <div class="featured-card" data-video-id="dQw4w9WgXcQ">
+          <div class="featured-badge">Tutorial</div>
+          <div class="video-thumbnail">
+            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="How to Play" />
+            <div class="play-button"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>How to Play Daily Quiz Battle - Complete Guide</h3>
+            <p>Learn how to register, participate, and win cash prizes in our daily quiz competition.</p>
+            <div class="video-meta">
+              <span><i class="far fa-clock"></i> 5:30</span>
+              <span><i class="far fa-eye"></i> 12K views</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card" data-video-id="9bZkp7q19f0">
+          <div class="featured-badge">Winner Story</div>
+          <div class="video-thumbnail">
+            <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Winner Experience" />
+            <div class="play-button"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>Rahul's Winning Experience - ₹5000 in One Week!</h3>
+            <p>Hear from Rahul how he won multiple times and his strategy for daily quiz battles.</p>
+            <div class="video-meta">
+              <span><i class="far fa-clock"></i> 8:15</span>
+              <span><i class="far fa-eye"></i> 8.5K views</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="featured-card" data-video-id="kJQP7kiw5Fk">
+          <div class="featured-badge">Tips & Tricks</div>
+          <div class="video-thumbnail">
+            <img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Quiz Tips" />
+            <div class="play-button"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>Top 10 Tips to Win Daily Quiz Battle Every Day</h3>
+            <p>Expert strategies to improve your chances of winning the daily quiz competition.</p>
+            <div class="video-meta">
+              <span><i class="far fa-clock"></i> 6:45</span>
+              <span><i class="far fa-eye"></i> 15K views</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 🗂️ Video Categories Section -->
+  <section class="categories-section">
+    <div class="container">
+      <div class="section-title"><h2>Browse Videos</h2></div>
+      <div class="category-tabs">
+        <div class="category-tab active" data-category="all">All Videos</div>
+        <div class="category-tab" data-category="tutorials">Tutorials</div>
+        <div class="category-tab" data-category="shorts">Shorts</div>
+        <div class="category-tab" data-category="users">User Videos</div>
+        <div class="category-tab" data-category="guides">Guides</div>
+      </div>
+      <div class="videos-grid"><!-- JavaScript will load videos here --></div>
+      <div class="load-more" style="text-align: center; margin-top: 40px;">
+        <button id="loadMore" class="cta-button" style="padding: 12px 30px;">Load More Videos</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🌟 Featured Creator Section -->
+  <section class="creator-section">
+    <div class="container">
+      <div class="creator-card">
+        <div class="creator-image">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Featured Creator" />
+        </div>
+        <div class="creator-content">
+          <h3>Featured Creator: Amit Sharma</h3>
+          <p>Amit has created over 50 tutorial videos for Daily Quiz Battle with more than 200K combined views. His clear explanations and practical tips have helped thousands of players improve their game.</p>
+          <div class="creator-social">
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🚀 Call-to-Action Section -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Want to Get Featured?</h2>
+      <p>Share your winning moments, tips, or feedback videos with us. The best videos each week get featured on our page and receive special rewards!</p>
+      <a href="https://wa.me/7694993234" class="cta-button">Submit Your Video</a>
+    </div>
+  </section>
+
+  <!-- 🎬 Video Modal -->
+  <div class="video-modal">
+    <div class="modal-content">
+      <span class="close-modal"><i class="fas fa-times"></i></span>
+      <div class="video-container">
+        <iframe id="ytplayer" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+  <script>
+        
+    document.getElementById('dynamicButton').href = BUTTON_CONFIG.link;
+</script>
 </body>
-<script src="script.js"></script>
 </html>
