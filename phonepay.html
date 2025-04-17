@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant PhonePe Payment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        
+        .description {
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 15px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+            font-weight: 500;
+        }
+        
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+        
+        .pay-button {
+            background: #5f259f;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        
+        .pay-button:hover {
+            background: #4a1d7a;
+        }
+        
+        .phonepe-icon {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .fallback {
+            margin-top: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .fallback a {
+            color: #5f259f;
+            text-decoration: none;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="all_assest/Simpleicons-Team-Simple-Phonepe.512.png" alt="PhonePe" class="logo">
+        <h1>Instant Payment via PhonePe</h1>
+        <p class="description">Send money directly to this UPI ID using PhonePe</p>
+        
+        <div class="input-group">
+            <label for="amount">Amount (₹)</label>
+            <input type="number" id="amount" placeholder="Enter amount">
+        </div>
+        
+        <div class="input-group">
+            <label for="note">Payment Note (Optional)</label>
+            <input type="text" id="note" placeholder="e.g., For services">
+        </div>
+        
+        <button id="payButton" class="pay-button">
+            <svg class="phonepe-icon" viewBox="0 0 24 24" fill="white">
+                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm0 22.5c-5.799 0-10.5-4.701-10.5-10.5S6.201 1.5 12 1.5 22.5 6.201 22.5 12 17.799 22.5 12 22.5zm4.341-6.257a.75.75 0 0 1-.75.75h-1.5a.75.75 0 0 1-.75-.75v-3.75h-3.75a.75.75 0 0 1-.75-.75v-1.5a.75.75 0 0 1 .75-.75h3.75V6.257a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 .75.75v3.75h3.75a.75.75 0 0 1 .75.75v1.5a.75.75 0 0 1-.75.75h-3.75v3.75z"/>
+            </svg>
+            Pay Now with PhonePe
+        </button>
+        
+        <p class="fallback">Don't have PhonePe? <a href="#" id="upiFallback">Use any UPI app</a></p>
+    </div>
+
+    <script>
+        document.getElementById('payButton').addEventListener('click', function() {
+            const upiId = '8269956278-2@ybl'; // Your UPI ID
+            const amount = document.getElementById('amount').value;
+            const note = document.getElementById('note').value || 'Payment';
+            
+            // PhonePe specific URL
+            const phonePeUrl = `phonepe://upi/pay?pa=${upiId}&pn=Recipient&am=${amount}&tn=${encodeURIComponent(note)}`;
+            
+            // Standard UPI URL as fallback
+            const upiUrl = `upi://pay?pa=${upiId}&pn=Recipient&am=${amount}&tn=${encodeURIComponent(note)}`;
+            
+            // Try to open PhonePe directly
+            window.location.href = phonePeUrl;
+            
+            // Fallback mechanism
+            setTimeout(function() {
+                if (!document.hidden) {
+                    // PhonePe didn't open, try generic UPI
+                    window.location.href = upiUrl;
+                    
+                    // If that also fails, show instructions
+                    setTimeout(function() {
+                        if (!document.hidden) {
+                            alert('Could not open PhonePe. Please make sure PhonePe is installed or use any UPI app to send to: ' + upiId);
+                        }
+                    }, 500);
+                }
+            }, 500);
+        });
+        
+        // Alternative UPI option
+        document.getElementById('upiFallback').addEventListener('click', function(e) {
+            e.preventDefault();
+            const upiId = '8269956278-2@ybl';
+            alert(`Use any UPI app to send payment to:\n\nUPI ID: ${upiId}\n\n1. Open your UPI app\n2. Enter this UPI ID\n3. Enter amount and send`);
+        });
+    </script>
+</body>
+</html>
