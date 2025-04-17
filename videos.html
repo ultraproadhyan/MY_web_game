@@ -4,52 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Daily Quiz Battle Video Hub</title>
-  <link rel="icon" type="image/png" href="/all_assest/logo2.png" />
-
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="all_assest/logo2.png" />
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Segoe+UI:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-  <!-- 🌐 Desktop Navbar -->
-  <nav class="navbar">
+   <!-- 🌐 Desktop Navbar -->
+   <nav class="navbar">
     <div class="logo-container">
-      <img class="logo" src="all_assest/logo2.png" alt="logo" />
-      <div class="app-name">My_Web_Game</div>
+        <img class="logo" src="all_assest/logo2.png" alt="logo">
+        <div class="app-name">My_Web_Game</div>
     </div>
-    <div class="nav-links">
-      <a href="home.html" ><i class="fas fa-home"></i> Home</a>
-      <a href="videos.html" class="active"><i class="fas fa-video"></i> Videos</a>
-      <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
-      <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-    </div>
-    <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
-  </nav>
 
-  <!-- 📱 Mobile Bottom Navbar -->
-  <nav class="mobile-navbar">
+    <div class="nav-links">
+        <a href="home.html"><i class="fas fa-home"></i> Home</a>
+        <a href="videos.html"  class="active"><i class="fas fa-video"></i> Videos</a>
+        <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
+
+<!-- 📱 Mobile Bottom Navbar (Stylish) -->
+<nav class="mobile-navbar">
     <ul class="mobile-nav-links">
         <li><a href="home.html" ><i class="fas fa-home"></i></a></li>
-        <li><a href="videos.html"><i class="fas fa-video"></i></a></li>
-        
-        <!-- Center Go Button -->
+        <li><a href="videos.html" class="active"><i class="fas fa-video"></i></a></li>
+
+        <!-- Center Add Button (GIF-style) -->
         <li class="add-button">
-            <a id="dynamicButton" href="#">Go</a>
+            <a class="dynamic-link" href="#">Go</a>
         </li>
 
         <li><a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i></a></li>
-        <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
     </ul>
 </nav>
 
-  <!-- 🔥 Header Section -->
+  <!-- Header Section -->
   <header class="video-header">
     <div class="container">
       <h1>Daily Quiz Battle Video Hub</h1>
@@ -57,67 +59,69 @@
     </div>
   </header>
 
-  <!-- 🎥 Featured Videos Section -->
-  <section class="featured-section">
+  <!-- Featured Videos Section -->
+  <section class="section-padding">
     <div class="container">
       <div class="section-title"><h2>Featured Videos</h2></div>
-      <div class="featured-grid">
-
-        <!-- Video Card Template -->
-        <div class="featured-card" data-video-id="dQw4w9WgXcQ">
-          <div class="featured-badge">Tutorial</div>
+      <div class="video-grid-container featured-grid">
+        <!-- Featured Video 1 -->
+        <div class="video-card featured-card" data-video-id="04cHp75lme8">
+          <div class="video-badge">New</div>
           <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="How to Play" />
+            <img src="https://i.ytimg.com/vi/04cHp75lme8/hqdefault.jpg" alt="New Quiz Battle Video" />
             <div class="play-button"><i class="fas fa-play"></i></div>
           </div>
           <div class="video-info">
-            <h3>How to Play Daily Quiz Battle - Complete Guide</h3>
-            <p>Learn how to register, participate, and win cash prizes in our daily quiz competition.</p>
+            <h3>"₹5 Mein Quiz Khelo Aur Real Cash Jeeto | Daily Quiz Battle Full Setup Tutorial #shorts #shortvideo</h3>
+            <p>🎯 Daily Quiz Battle | ₹5 Mein Quiz Khelo Aur Jeeto Real Cash!
+
+            
+              </p>
             <div class="video-meta">
-              <span><i class="far fa-clock"></i> 5:30</span>
-              <span><i class="far fa-eye"></i> 12K views</span>
+              <span><i class="far fa-clock"></i> 4:50</span>
+              <span><i class="far fa-eye"></i> 2.3K views</span>
             </div>
           </div>
         </div>
-
-        <div class="featured-card" data-video-id="9bZkp7q19f0">
-          <div class="featured-badge">Winner Story</div>
+        
+        <!-- Featured Video 2 -->
+        <div class="video-card featured-card" data-video-id="dQw4w9WgXcQ">
           <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Winner Experience" />
+            <img src="https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg" alt="Registration Guide" />
             <div class="play-button"><i class="fas fa-play"></i></div>
           </div>
           <div class="video-info">
-            <h3>Rahul's Winning Experience - ₹5000 in One Week!</h3>
-            <p>Hear from Rahul how he won multiple times and his strategy for daily quiz battles.</p>
+            <h3>How to Register for Daily Quiz Battle</h3>
+            <p>Step-by-step guide to create your account and start playing.</p>
             <div class="video-meta">
-              <span><i class="far fa-clock"></i> 8:15</span>
-              <span><i class="far fa-eye"></i> 8.5K views</span>
+              <span><i class="far fa-clock"></i> 3:45</span>
+              <span><i class="far fa-eye"></i> 7.2K views</span>
             </div>
           </div>
         </div>
-
-        <div class="featured-card" data-video-id="kJQP7kiw5Fk">
-          <div class="featured-badge">Tips & Tricks</div>
+        
+        <!-- Featured Video 3 -->
+        <div class="video-card featured-card" data-video-id="9bZkp7q19f0">
+          <div class="video-badge">Popular</div>
           <div class="video-thumbnail">
-            <img src="https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg" alt="Quiz Tips" />
+            <img src="https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg" alt="Prize Withdrawal" />
             <div class="play-button"><i class="fas fa-play"></i></div>
           </div>
           <div class="video-info">
-            <h3>Top 10 Tips to Win Daily Quiz Battle Every Day</h3>
-            <p>Expert strategies to improve your chances of winning the daily quiz competition.</p>
+            <h3>Prize Withdrawal Process Explained</h3>
+            <p>Learn how to withdraw your winnings to UPI or bank account.</p>
             <div class="video-meta">
-              <span><i class="far fa-clock"></i> 6:45</span>
-              <span><i class="far fa-eye"></i> 15K views</span>
+              <span><i class="far fa-clock"></i> 4:20</span>
+              <span><i class="far fa-eye"></i> 5.8K views</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- 🗂️ Video Categories Section -->
-  <section class="categories-section">
+  <!-- Video Categories Section -->
+  <section class="section-padding">
     <div class="container">
       <div class="section-title"><h2>Browse Videos</h2></div>
       <div class="category-tabs">
@@ -127,15 +131,15 @@
         <div class="category-tab" data-category="users">User Videos</div>
         <div class="category-tab" data-category="guides">Guides</div>
       </div>
-      <div class="videos-grid"><!-- JavaScript will load videos here --></div>
+      <div class="video-grid-container" id="videosGrid"><!-- Videos loaded by JS --></div>
       <div class="load-more" style="text-align: center; margin-top: 40px;">
         <button id="loadMore" class="cta-button" style="padding: 12px 30px;">Load More Videos</button>
       </div>
     </div>
   </section>
 
-  <!-- 🌟 Featured Creator Section -->
-  <section class="creator-section">
+  <!-- Featured Creator Section -->
+  <section class="section-padding creator-section">
     <div class="container">
       <div class="creator-card">
         <div class="creator-image">
@@ -154,16 +158,16 @@
     </div>
   </section>
 
-  <!-- 🚀 Call-to-Action Section -->
-  <section class="cta-section">
+  <!-- Call-to-Action Section -->
+  <section class="section-padding cta-section">
     <div class="container">
       <h2>Want to Get Featured?</h2>
       <p>Share your winning moments, tips, or feedback videos with us. The best videos each week get featured on our page and receive special rewards!</p>
-      <a href="https://wa.me/7694993234" class="cta-button">Submit Your Video</a>
+      <a href="https://wa.me/YOUR_NUMBER" class="cta-button">Submit Your Video</a>
     </div>
   </section>
 
-  <!-- 🎬 Video Modal -->
+  <!-- Video Modal -->
   <div class="video-modal">
     <div class="modal-content">
       <span class="close-modal"><i class="fas fa-times"></i></span>
@@ -172,12 +176,213 @@
       </div>
     </div>
   </div>
-
+  
   <!-- Scripts -->
-  <script src="script.js"></script>
   <script>
-        
-    document.getElementById('dynamicButton').href = BUTTON_CONFIG.link;
-</script>
+    // Sample video data
+    const videoData = [
+    
+    {
+        id: "dQw4w9WgXcQ",
+        title: "How to Register for Daily Quiz Battle",
+        desc: "Step-by-step guide to create your account and start playing",
+        duration: "3:45",
+        views: "7.2K",
+        category: "tutorials",
+        thumb: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg"
+      },
+      {
+        id: "9bZkp7q19f0",
+        title: "Prize Withdrawal Process Explained",
+        desc: "Learn how to withdraw your winnings to UPI or bank account",
+        duration: "4:20",
+        views: "5.8K",
+        category: "guides",
+        thumb: "https://i.ytimg.com/vi/9bZkp7q19f0/hqdefault.jpg"
+      },
+      {
+        id: "kJQP7kiw5Fk",
+        title: "My First Win - User Experience",
+        desc: "Priya shares her experience winning ₹500 on her first attempt",
+        duration: "2:30",
+        views: "3.5K",
+        category: "users",
+        thumb: "https://i.ytimg.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
+      },
+      {
+        id: "JGwWNGJdvx8",
+        title: "Daily Quiz Battle Short - Quick Tip",
+        desc: "15-second tip to improve your response time",
+        duration: "0:15",
+        views: "12K",
+        category: "shorts",
+        thumb: "https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg"
+      },
+      {
+        id: "nYh-n7EOtMA",
+        title: "Understanding the Scoring System",
+        desc: "How points are calculated and leaderboard works",
+        duration: "6:10",
+        views: "4.3K",
+        category: "guides",
+        thumb: "https://i.ytimg.com/vi/nYh-n7EOtMA/hqdefault.jpg"
+      },
+      {
+        id: "QNJL6nfu__Q",
+        title: "Common Mistakes to Avoid",
+        desc: "5 mistakes that reduce your chances of winning",
+        duration: "5:45",
+        views: "8.1K",
+        category: "tutorials",
+        thumb: "https://i.ytimg.com/vi/QNJL6nfu__Q/hqdefault.jpg"
+      },
+      {
+        id: "FlsCjmMhFmw",
+        title: "Winner Celebration - ₹2000 Prize",
+        desc: "Ravi celebrates his big win with family",
+        duration: "1:45",
+        views: "2.7K",
+        category: "users",
+        thumb: "https://i.ytimg.com/vi/FlsCjmMhFmw/hqdefault.jpg"
+      },
+      {
+        id: "JGwWNGJdvx8",
+        title: "Short: Code Entry Tutorial",
+        desc: "Quick guide to entering your quiz code",
+        duration: "0:30",
+        views: "9.3K",
+        category: "shorts",
+        thumb: "https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg"
+      }
+    ];
+
+    // DOM Elements
+    const videosGrid = document.getElementById('videosGrid');
+    const categoryTabs = document.querySelectorAll('.category-tab');
+    const loadMoreBtn = document.getElementById('loadMore');
+    const videoModal = document.querySelector('.video-modal');
+    const closeModal = document.querySelector('.close-modal');
+    const ytPlayer = document.getElementById('ytplayer');
+
+    // Current state
+    let currentCategory = 'all';
+    let visibleVideos = 4;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderVideos();
+      setupEventListeners();
+    });
+
+    // Render videos
+    function renderVideos() {
+      videosGrid.innerHTML = '';
+
+      const filtered = currentCategory === 'all'
+        ? videoData
+        : videoData.filter(v => v.category === currentCategory);
+
+      const videosToShow = filtered.slice(0, visibleVideos);
+
+      if (!videosToShow.length) {
+        videosGrid.innerHTML = '<p style="grid-column:1/-1; text-align:center;">No videos found in this category</p>';
+        loadMoreBtn.style.display = 'none';
+        return;
+      }
+
+      videosToShow.forEach(video => {
+        const card = document.createElement('div');
+        card.className = 'video-card';
+        card.dataset.videoId = video.id;
+
+        card.innerHTML = `
+          <div class="video-thumbnail">
+            <img src="${video.thumb}" alt="${video.title}">
+            <div class="play-button"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h3>${video.title}</h3>
+            <p>${video.desc}</p>
+            <div class="video-meta">
+              <span><i class="far fa-clock"></i> ${video.duration}</span>
+              <span><i class="far fa-eye"></i> ${video.views} views</span>
+            </div>
+          </div>
+        `;
+        videosGrid.appendChild(card);
+      });
+
+      loadMoreBtn.style.display = visibleVideos >= filtered.length ? 'none' : 'block';
+    }
+
+    // Event listeners
+    function setupEventListeners() {
+      // Category tabs
+      categoryTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          categoryTabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          currentCategory = tab.dataset.category;
+          visibleVideos = 4;
+          renderVideos();
+        });
+      });
+
+      // Load more button
+      loadMoreBtn.addEventListener('click', () => {
+        visibleVideos += 4;
+        renderVideos();
+      });
+
+      // Video click handlers
+      document.addEventListener('click', e => {
+        const card = e.target.closest('.video-card');
+        if (card && card.dataset.videoId) {
+          openVideoModal(card.dataset.videoId);
+        }
+      });
+
+      // Modal controls
+      closeModal.addEventListener('click', closeVideoModal);
+      videoModal.addEventListener('click', e => {
+        if (e.target === videoModal) {
+          closeVideoModal();
+        }
+      });
+    }
+
+    // Open video modal
+    function openVideoModal(videoId) {
+      ytPlayer.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+      videoModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close video modal
+    function closeVideoModal() {
+      ytPlayer.src = '';
+      videoModal.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+     // Function to update all dynamic links
+     function updateAllLinks(newLink) {
+            var buttons = document.querySelectorAll('a.dynamic-link, button.dynamic-link');
+
+            buttons.forEach(function(button) {
+                if (button.tagName.toLowerCase() === 'a') {
+                    button.setAttribute('href', newLink); // Update link for <a> tags
+                } else if (button.tagName.toLowerCase() === 'button') {
+                    button.onclick = function() {
+                        window.location.href = newLink; // Update link for <button> tags
+                    };
+                }
+            });
+        }
+
+        // Example: Change all links after 3 seconds
+        setTimeout(function() {
+            updateAllLinks('https://cartoon.pythonanywhere.com/'); // Update link
+        },500); // 3 seconds delay
+  </script>
 </body>
 </html>
