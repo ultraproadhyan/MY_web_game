@@ -1,8 +1,3 @@
-// config.js
-const BUTTON_LINKS = {
-    mainButton: "videos.html",
-    
-};
 
  // Slider Functionality
  const sliderTrack = document.getElementById('sliderTrack');
