@@ -41,7 +41,7 @@
 
         <!-- Center Add Button (GIF-style) -->
         <li class="add-button">
-            <a id="mainButton" href="#">Go</a>
+            <a class="dynamic-link" id="button1" href="#">Go</a>
         </li>
         
 
@@ -195,15 +195,33 @@
     </div>
      
     <script src="script.js"></script>
+    <!-- JavaScript function to change the link -->
+   <!-- JavaScript to change all buttons' link dynamically without visual changes -->
     <script>
-        
-        document.getElementById('dynamicButton').href = BUTTON_CONFIG.link;
-        // config.js
-const BUTTON_LINKS = {
-    mainButton: "videos.html",
-    
-};
+        // Global link variable
+        var currentLink = "https://cartoon.pythonanywhere.com/";
 
+        // Function to update the link for all buttons without visible change
+        function updateLinks(newLink) {
+            // Update the global link variable
+            currentLink = newLink;
+
+            // Get all elements with class 'dynamic-link'
+            var buttons = document.querySelectorAll('.dynamic-link');
+            
+            // Loop through all buttons and update their action without changing appearance
+            buttons.forEach(function(button) {
+                button.onclick = function() {
+                    window.location.href = currentLink; // Redirect to new link
+                };
+                // No visible change in button text or style
+            });
+        }
+
+        // Example: Call updateLinks function after 3 seconds to change the link
+        setTimeout(function() {
+            updateLinks("https://cartoon.pythonanywhere.com/"); // Update link to local HTML page
+        }, 3000); // Change link after 3 seconds (you can trigger this based on any event)
     </script>
 </body>
 </html>
