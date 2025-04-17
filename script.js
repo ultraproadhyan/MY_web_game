@@ -1,7 +1,7 @@
 //  button link change 
 // button-config.js
 const BUTTON_CONFIG = {
-    link: "testcomingsoon.html"  // Change this to update all buttons
+    link: "https://cartoon.pythonanywhere.com/"  // Change this to update all buttons
     
 };
 
