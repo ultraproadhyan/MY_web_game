@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta name="description" content="Fun quiz game to play in your browser. No signup needed, just fun and challenge!">
-<meta name="keywords" content="quiz game, play online, browser game, web game, my web game, fun games">
-<meta name="robots" content="index, follow">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MY WEB GAME</title>
-        <link rel="icon" type="image/png" href="/all_assest/logo2.png">
+    <link rel="icon" type="image/png" href="/all_assest/logo2.png">
 
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
@@ -17,34 +14,42 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <!-- Desktop Navbar -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <div ><img class="logo" src="all_assest/logo2.png" alt="logo"></div>
-            <div class="app-name">My_Web_Game</div>
-        </div>
+    <!-- 🌐 Desktop Navbar -->
+<nav class="navbar">
+    <div class="logo-container">
+        <img class="logo" src="all_assest/logo2.png" alt="logo">
+        <div class="app-name">My_Web_Game</div>
+    </div>
+
+    <div class="nav-links">
+        <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
+        <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
+        <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
+        <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+    </div>
+
+    <button class="mobile-menu-btn">
+        <i class="fas fa-bars"></i>
+    </button>
+</nav>
+
+<!-- 📱 Mobile Bottom Navbar (Stylish) -->
+<nav class="mobile-navbar">
+    <ul class="mobile-nav-links">
+        <li><a href="home.html" class="active"><i class="fas fa-home"></i></a></li>
+        <li><a href="videos.html"><i class="fas fa-video"></i></a></li>
+
+        <!-- Center Add Button (GIF-style) -->
+        <li class="add-button">
+            <a id="dynamicButton" href="#">Go</a>
+        </li>
         
-        <div class="nav-links">
-            <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
-            <a href="download.html"><i class="fas fa-download"></i> Download App</a>
-            <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
-        </div>
-        
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </nav>
-    
-    <!-- Mobile Navbar (Bottom) -->
-    <nav class="mobile-navbar">
-        <ul class="mobile-nav-links">
-            <li><a href="home.html" class="active"><i class="fas fa-home"></i> Home</a></li>
-            <li><a href="download.html"><i class="fas fa-download"></i> Download</a></li>
-            <li><a href="videos.html"><i class="fas fa-video"></i> Videos</a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-        </ul>
-    </nav>
+
+        <li><a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i></a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
+    </ul>
+</nav>
+
     <div class="cinematic-slider">
         <div class="slider-track" id="sliderTrack">
             <!-- Slide 1 -->
@@ -53,7 +58,7 @@
                 <div class="slide-content">
                     <h2>🎯 Daily Quiz Battle – Jeeto Cash Rozana! 💸</h2>
                     
-                    <a href="https://cartoon.pythonanywhere.com/" class="btn">ready for Test</a>
+                    <a href="#" id="dynamicButton" class="btn ">ready for Test</a>
                 </div>
             </div>
             
@@ -65,7 +70,8 @@
                     <div class="highlight">
                     
                       </div>
-                      <a href="https://cartoon.pythonanywhere.com/" class="btn">ready for Test</a>
+                      <a href="#" id="dynamicButton" class="btn ">ready for Test</a>
+
                 </div>
             </div>
             
@@ -75,7 +81,8 @@
                 <div class="slide-content">
                     <h2>Daily Test Timing: 7 PM – 8 PM</h2>
                     
-                    <a href="https://cartoon.pythonanywhere.com/" class="btn">ready for Test</a>
+                    <a href="#" id="dynamicButton" class="btn ">ready for Test</a>
+
                 </div>
             </div>
         </div>
@@ -95,28 +102,29 @@
     </div>
  <!-- Scrollable button container -->
 <!-- <div class="scroll-buttons">
-    <button class="button-64" onclick="window.location.href='downloader.html'" role="button"><span>Code to Image </span></button> -->
+    <button class="button-64" id="dynamicButton"  onclick="window.location.href='downloader.html'" role="button"><span>Code to Image </span></button>
+    
    
-    <!-- Add as many as you want -->
-  </div>
+     Add as many as you want  -->
+  </div> 
   
   
     <!-- Demo Content -->
     <div class="content">
-        <h1>Welcome to MWG</h1>
+        <h1 class="wel">Welcome to MWG</h1>
         <div id="main-container">
             <h1 id="title">🎯 Daily Quiz Battle – Jeeto Cash Rozana! 💸</h1>
         
             <div class="highlight-box">
-              <p><span class="important">Entry Fee:</span> ₹10 only</p>
+              <p><span class="important">Entry Fee:</span> ₹5 only</p>
               <p><span class="important">Daily Test Timing:</span> 7 PM – 8 PM</p>
               <p><span class="important">Winners:</span> Top 3 Participants</p>
               <p><span class="important">Prize Distribution:</span></p>
               <ul>
-                <li>🥇 1st – 30%</li>
-                <li>🥈 2nd – 30%</li>
-                <li>🥉 3rd – 30%</li>
-                <li>💰 10% Website Owner (Maintenance/Hosting)</li>
+                <li>🥇 1st – </li>
+                <li>🥈 2nd – </li>
+                <li>🥉 3rd – </li>
+                
               </ul>
             </div>
         
@@ -135,9 +143,14 @@
             </div>
           </div>
         
-        <button class="button-86" onclick="window.location.href='https://cartoon.pythonanywhere.com/'" role="button">
+        <!-- <button class="button-86" onclick="window.location.href='https://cartoon.pythonanywhere.com/'" role="button">
+            Get start for Test
+        </button> -->
+        <button class="button-86"  id="dynamicButton" onclick="window.location.href='testcomingsoon.html'" role="button">
             Get start for Test
         </button>
+        
+
         
     </div>
     <!-- table of winners -->
@@ -180,7 +193,11 @@
             <!-- Comments will appear here -->
         </div>
     </div>
-
+     
     <script src="script.js"></script>
+    <script>
+        
+        document.getElementById('dynamicButton').href = BUTTON_CONFIG.link;
+    </script>
 </body>
 </html>
