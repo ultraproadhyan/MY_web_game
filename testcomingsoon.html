@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coming Soon</title>
     <style>
@@ -30,6 +29,7 @@
             width: 100%;
             position: relative;
             z-index: 2;
+            animation: fadeIn 1s forwards;
         }
 
         h1 {
@@ -39,45 +39,38 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: fadeIn 1s forwards;
         }
 
         p {
             font-size: clamp(1rem, 3vw, 1.2rem);
-            margin-bottom: 30px;
-            opacity: 0;
-            animation: fadeIn 1s 0.5s forwards;
+            margin-bottom: 15px;
             color: rgba(255, 255, 255, 0.8);
         }
 
-        .countdown {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 30px 0;
-            flex-wrap: wrap;
-        }
-
-        .countdown-item {
+        .timing-box {
             background: rgba(255, 255, 255, 0.1);
-            padding: 15px;
-            border-radius: 8px;
-            min-width: 70px;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 30px auto;
+            max-width: 400px;
             backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .countdown-number {
-            font-size: clamp(1.5rem, 5vw, 2rem);
+        .timing {
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: bold;
             background: linear-gradient(to right, #ff6b6b, #4ecdc4);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            margin: 10px 0;
         }
 
-        .countdown-label {
-            font-size: 0.8rem;
-            margin-top: 5px;
+        .highlight {
+            color: #fdcb6e;
+            font-weight: bold;
         }
 
         .cube {
@@ -99,10 +92,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        .cube-piece {
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
         .front { transform: translateZ(100px); background: #ff6b6b; }
         .back { transform: rotateY(180deg) translateZ(100px); background: #4ecdc4; }
         .right { transform: rotateY(90deg) translateZ(100px); background: #a55eea; }
@@ -120,10 +109,12 @@
             cursor: pointer;
             margin: 20px 0;
             transition: transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         button:hover {
             transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
         .social-links {
@@ -136,12 +127,20 @@
         .social-link {
             color: white;
             font-size: 1.5rem;
-            transition: transform 0.3s;
+            transition: all 0.3s;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .social-link:hover {
             transform: translateY(-3px);
             color: #ff6b6b;
+            background: rgba(255, 255, 255, 0.2);
         }
 
         @keyframes rotate {
@@ -150,7 +149,8 @@
         }
 
         @keyframes fadeIn {
-            to { opacity: 1; }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Mobile responsiveness */
@@ -163,10 +163,6 @@
                 transform-style: preserve-3d;
                 transform: translateZ(75px);
             }
-            .countdown-item {
-                min-width: 60px;
-                padding: 10px;
-            }
         }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -174,25 +170,12 @@
 <body>
     <div class="container">
         <h1>COMING SOON</h1>
-        <p>We're building something amazing. Stay tuned for our launch!</p>
+        <p>कृपया इस समय का इंतजार करें</p>
         
-        <div class="countdown">
-            <div class="countdown-item">
-                <div class="countdown-number" id="days">00</div>
-                <div class="countdown-label">Days</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="hours">00</div>
-                <div class="countdown-label">Hours</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="minutes">00</div>
-                <div class="countdown-label">Minutes</div>
-            </div>
-            <div class="countdown-item">
-                <div class="countdown-number" id="seconds">00</div>
-                <div class="countdown-label">Seconds</div>
-            </div>
+        <div class="timing-box">
+            <p>Mark your calendars!</p>
+            <div class="timing">10:00 AM - 5:00 PM</div>
+            <p> हमसे जुड़ें सुबह <span class="highlight">10am to 8pm</span> तक कोड ढूंढने और टेस्ट करने के लिए |</p>
         </div>
         
         <div class="cube">
@@ -216,45 +199,6 @@
     </div>
 
     <script>
-        // Countdown Timer - Set to 10 hours 5 minutes from now
-        function updateCountdown() {
-            // Get current time
-            const now = new Date();
-            
-            // Set target time to 10 hours and 5 minutes from now
-            const launchDate = new Date();
-            
-            launchDate.setHours(now.getHours() + 9);
-            launchDate.setMinutes(now.getMinutes() + 57);
-            
-            function update() {
-                const currentTime = new Date();
-                const diff = launchDate - currentTime;
-                
-                // Calculate time remaining
-                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                
-                // Update display
-                document.getElementById('days').textContent = '00';
-                document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-                
-                // When countdown finishes
-                if (diff <= 0) {
-                    document.querySelector('h1').textContent = "WE'RE LIVE!";
-                    document.querySelector('p').textContent = "Our website is now available. Welcome!";
-                    clearInterval(interval);
-                }
-            }
-            
-            update();
-            const interval = setInterval(update, 1000);
-        }
-        
-        // (Keep the rest of the JavaScript the same)
         document.getElementById('speedBtn').addEventListener('click', function() {
             const cube = document.querySelector('.cube');
             cube.style.animationDuration = '5s';
@@ -265,9 +209,6 @@
                 this.textContent = 'Speed Up Animation';
             }, 3000);
         });
-        
-        // Initialize
-        updateCountdown();
     </script>
 </body>
 </html>
