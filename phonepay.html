@@ -3,349 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment to Pradeep| PhonePe</title>
+    <title>UPI Payment Gateway</title>
     <style>
-        :root {
-            --phonepe-purple: #5F259F;
-            --phonepe-dark: #4a1d7d;
-            --light-gray: #f5f5f5;
-            --dark-gray: #333;
-            --white: #ffffff;
-        }
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', sans-serif;
-        }
-        
         body {
-            background-color: #f8f9fa;
-            color: var(--dark-gray);
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin: 0;
             padding: 20px;
             min-height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
         
         .payment-container {
-            max-width: 500px;
-            width: 100%;
-            background: var(--white);
-            border-radius: 16px;
+            background: white;
+            border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            animation: fadeIn 0.5s ease;
-        }
-        
-        .payment-header {
-            background: var(--phonepe-purple);
-            color: var(--white);
-            padding: 25px;
-            text-align: center;
-            position: relative;
-        }
-        
-        .payment-header h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-        }
-        
-        .payment-header p {
-            opacity: 0.9;
-            font-size: 0.9rem;
-        }
-        
-        .payment-body {
             padding: 30px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
         }
         
-        .payment-amount {
+        .header {
             margin-bottom: 25px;
         }
         
-        .payment-amount label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-gray);
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 24px;
         }
         
-        .amount-input {
-            position: relative;
+        .header p {
+            color: #7f8c8d;
+            font-size: 14px;
         }
         
-        .amount-input span {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            font-weight: bold;
-            color: var(--dark-gray);
-        }
-        
-        .amount-input input {
-            width: 100%;
-            padding: 15px 15px 15px 40px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: all 0.3s;
-        }
-        
-        .amount-input input:focus {
-            border-color: var(--phonepe-purple);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(95, 37, 159, 0.2);
-        }
-        
-        .payment-message {
-            margin-bottom: 25px;
-        }
-        
-        .payment-message label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--dark-gray);
-        }
-        
-        .payment-message input {
+        .payment-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
             width: 100%;
             padding: 15px;
-            border: 2px solid #e0e0e0;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .payment-message input:focus {
-            border-color: var(--phonepe-purple);
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(95, 37, 159, 0.2);
-        }
-        
-        .payment-button {
-            display: block;
-            width: 100%;
-            padding: 16px;
-            background: var(--phonepe-purple);
-            color: var(--white);
+            margin: 15px 0;
             border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
+            border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-            text-align: center;
-            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
         
-        .payment-button:hover {
-            background: var(--phonepe-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(95, 37, 159, 0.3);
+        .payment-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
         }
         
-        .payment-button:active {
-            transform: translateY(0);
+        .payment-btn i {
+            font-size: 24px;
+            margin-right: 10px;
         }
         
-        .payment-details {
+        .phonepe { 
+            background: #5f259f;
+            color: white;
+        }
+        
+        .paytm { 
+            background: #00baf2;
+            color: white;
+        }
+        
+        .gpay { 
+            background: #4285F4;
+            color: white;
+        }
+        
+        .test-code {
             margin-top: 30px;
-            padding: 20px;
-            background: var(--light-gray);
+            padding: 15px;
+            background: #f8f9fa;
             border-radius: 8px;
-            font-size: 0.9rem;
+            font-size: 12px;
+            text-align: left;
         }
         
-        .payment-details h3 {
-            margin-bottom: 10px;
-            color: var(--phonepe-dark);
+        .test-code h3 {
+            margin-top: 0;
+            color: #2c3e50;
         }
         
-        .payment-details p {
-            margin-bottom: 8px;
-            word-break: break-all;
+        .qr-code {
+            margin: 20px auto;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            display: inline-block;
         }
-        
-        .payment-footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #666;
-            border-top: 1px solid #eee;
+        .whatsapp-btn {
+            margin: auto;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        @media (max-width: 480px) {
-            .payment-container {
-                border-radius: 0;
-            }
-            
-            body {
-                padding: 0;
-            }
-            
-            .payment-header {
-                padding: 20px 15px;
-            }
-            
-            .payment-body {
-                padding: 20px;
-            }
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="payment-container">
-        <div class="payment-header">
-            <h1>Send Payment</h1>
-            <h2>agar kuchh kam na kare to 8269956278 par phonepay karke code prapt kare</h2>
-            <p>Secure payment via PhonePe</p>
+        <div class="header">
+            <h1>Pay Money & Get Instant Access</h1>
+            <p>Secure payment via UPI apps. Complete your payment to receive the code.</p>
         </div>
         
-       <!-- Keep your HTML head and style as-is -->
-
-<!-- Just replace this portion in your HTML body inside .payment-body -->
-<div class="payment-body">
-    <form id="paymentForm">
-        <div class="payment-amount">
-            <label for="amount">Amount (₹)</label>
-            <div class="amount-input">
-                <span>₹</span>
-                <input type="number" id="amount" name="amount" placeholder="Enter amount" value="100" min="1">
-            </div>
+        <div class="qr-code">
+            <!-- Replace with your actual QR code image -->
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=8269956278-2@ybl&pn=IndiaPost" alt="UPI QR Code" width="150">
         </div>
         
-        <div class="payment-message">
-            <label for="message">Message (Optional)</label>
-            <input type="text" id="message" name="message" placeholder="e.g., For groceries" value="Payment">
+        <p style="margin-bottom: 20px; color: #7f8c8d;">OR pay directly via:</p>
+        
+        <button class="payment-btn phonepe" onclick="payWithPhonePe()">
+            <i class="fab fa-product-hunt"></i> Pay with PhonePe
+        </button>
+        
+        <button class="payment-btn paytm" onclick="payWithPaytm()">
+            <i class="fas fa-rupee-sign"></i> Pay with Paytm
+        </button>
+        
+        <button class="payment-btn gpay" onclick="payWithGPay()">
+            <i class="fab fa-google"></i> Pay with Google Pay
+        </button>
+        
+        <div class="test-code">
+            <h3> Payment Instructions:</h3>
+            <p>1. Click any payment button above</p>
+            <p>2. Enter any amount </p>
+            <p>3. After successful payment, you'll receive a confirmation</p>
+            <p>4. Your access code will be sent to your phone</p>
         </div>
-
-        <!-- PhonePe Button -->
-        <a href="#" id="paymentLink" class="payment-button">
-            Pay Now via PhonePe
-        </a>
-
-        <!-- WhatsApp Button -->
-        <a href="#" id="whatsappLink" class="payment-button" style="background-color: #25D366; margin-top: 10px;">
-            Pay via WhatsApp
-        </a>
-    </form>
-
-    <div class="payment-details">
-        <h3>UPI Payment Details</h3>
-        <p><strong>Name:</strong> PRADEEP </p>
-        <p><strong>UPI ID:</strong> 8269956278-2@axl</p>
-        <p><strong>Alternative UPI:</strong> 8269956278-2@ybl</p>
+        <h3>agar koi problem ho ya code na mile to click karke problem bataye</h3>
+        <button class="whatsapp-btn" onclick="openWhatsApp()">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="24" height="24">
+            WhatsApp Chat
+        </button>
     </div>
-</div>
-
-        
-        <div class="payment-footer">
-            Note: This will open PhonePe app to complete the payment
-        </div>
-    </div>
-
+    
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const amountInput = document.getElementById('amount');
-            const messageInput = document.getElementById('message');
-            const paymentLink = document.getElementById('paymentLink');
-            
-            // Set default values
-            amountInput.value = '5';
-            messageInput.value = 'send test code';
-            
-            // Update payment link when inputs change
-            function updatePaymentLink() {
-                const amount = amountInput.value;
-                const message = encodeURIComponent(messageInput.value);
-                
-                paymentLink.href = `upi://pay?pa=8269956278-2@axl&pn=PRADEEP%20DADORIYA&am=${amount}&tn=${message}&mc=0000&mode=02&purpose=00`;
-            }
-            
-            // Initialize payment link
-            updatePaymentLink();
-            
-            // Add event listeners for changes
-            amountInput.addEventListener('input', updatePaymentLink);
-            messageInput.addEventListener('input', updatePaymentLink);
-            
-            // Add animation to button when clicked
-            paymentLink.addEventListener('click', function(e) {
-                if (amountInput.value <= 0 || isNaN(amountInput.value)) {
-                    e.preventDefault();
-                    amountInput.focus();
-                    amountInput.style.borderColor = 'red';
-                    setTimeout(() => {
-                        amountInput.style.borderColor = '#e0e0e0';
-                    }, 1000);
-                }
-            });
-        });
-         document.addEventListener('DOMContentLoaded', function () {
-        const amountInput = document.getElementById('amount');
-        const messageInput = document.getElementById('message');
-        const paymentLink = document.getElementById('paymentLink');
-        const whatsappLink = document.getElementById('whatsappLink');
-
-        // Default values
-        amountInput.value = '5';
-        messageInput.value = 'SEND TEST CODE';
-
-        function updateLinks() {
-            const amount = amountInput.value.trim();
-            const message = encodeURIComponent(messageInput.value.trim());
-
-            // UPI link
-            paymentLink.href = `upi://pay?pa=8269956278-2@axl&pn=PRADEEP%20DADORIYA&am=${amount}&tn=${message}&mc=0000&mode=02&purpose=00`;
-
-            // WhatsApp message
-            const text = `Hey, I want to make a payment of ₹${amount}. Reason: ${decodeURIComponent(message)}. UPI ID: 8269956278-2@axl`;
-            const phoneNumber = '9773950954';
-            whatsappLink.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+        const upiId = "8269956278-2@ybl"; // Your UPI ID
+        const payeeName = "India Post"; // Your business name
+        const amount = ""; // Leave empty for user to enter
+        
+        function payWithPhonePe() {
+            window.location.href = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
         }
-
-        updateLinks();
-
-        // Update links when values change
-        amountInput.addEventListener('input', updateLinks);
-        messageInput.addEventListener('input', updateLinks);
-
-        // Validation before proceeding
-        paymentLink.addEventListener('click', function (e) {
-            if (amountInput.value <= 0 || isNaN(amountInput.value)) {
-                e.preventDefault();
-                amountInput.focus();
-                amountInput.style.borderColor = 'red';
-                setTimeout(() => {
-                    amountInput.style.borderColor = '#e0e0e0';
-                }, 1000);
+        
+        function payWithPaytm() {
+            window.location.href = `paytmmp://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}`;
+        }
+        
+        function payWithGPay() {
+            window.location.href = `tez://upi/pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}`;
+        }
+        // whatsapp 
+        function openWhatsApp() {
+            // अपना WhatsApp Number या Link यहाँ डालो
+            const phoneNumber = "919773950954";  // Example: 9876543210 (Country Code के बिना)
+            const message = "Hello Bhai, ?";  // Optional: Default Message
+            
+            // Mobile या PC Detect करने का Logic
+            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // MOBILE USERS के लिए WhatsApp App Link
+                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+            } else {
+                // DESKTOP USERS के लिए WhatsApp Web Link
+                window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`, '_blank');
             }
-        });
-
-        whatsappLink.addEventListener('click', function (e) {
-            if (amountInput.value <= 0 || isNaN(amountInput.value)) {
-                e.preventDefault();
-                amountInput.focus();
-                amountInput.style.borderColor = 'red';
-                setTimeout(() => {
-                    amountInput.style.borderColor = '#e0e0e0';
-                }, 1000);
-            }
-        });
-    });
+        }
     </script>
 </body>
 </html>
