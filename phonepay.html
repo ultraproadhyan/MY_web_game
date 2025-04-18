@@ -3,195 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPI Payment Gateway</title>
+    <title>PhonePe Payment</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
             margin: 0;
             padding: 20px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
         }
         
         .payment-container {
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             padding: 30px;
-            width: 90%;
-            max-width: 400px;
             text-align: center;
+            max-width: 400px;
+            width: 100%;
         }
         
-        .header {
-            margin-bottom: 25px;
+        .phonepe-logo {
+            width: 150px;
+            margin-bottom: 20px;
         }
         
-        .header h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 24px;
-        }
-        
-        .header p {
-            color: #7f8c8d;
-            font-size: 14px;
-        }
-        
-        .payment-btn {
+        .scan-btn {
+            background-color: #5f259f;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 15px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
-            padding: 15px;
-            margin: 15px 0;
-            border: none;
-            border-radius: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        
-        .payment-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-        }
-        
-        .payment-btn i {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-        
-        .phonepe { 
-            background: #5f259f;
-            color: white;
-        }
-        
-        .paytm { 
-            background: #00baf2;
-            color: white;
-        }
-        
-        .gpay { 
-            background: #4285F4;
-            color: white;
-        }
-        
-        .test-code {
-            margin-top: 30px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            font-size: 12px;
-            text-align: left;
-        }
-        
-        .test-code h3 {
-            margin-top: 0;
-            color: #2c3e50;
-        }
-        
-        .qr-code {
+            gap: 10px;
             margin: 20px auto;
-            padding: 10px;
-            background: white;
-            border-radius: 8px;
-            display: inline-block;
+            width: 100%;
+            transition: all 0.3s;
         }
-        .whatsapp-btn {
-            margin: auto;
-            background-color: #25D366;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 50px;
-            font-size: 16px;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        
+        .scan-btn:hover {
+            background-color: #4a1d7d;
+            transform: translateY(-2px);
         }
-        .whatsapp-btn:hover {
-            background-color: #128C7E;
+        
+        .scan-btn img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .footer {
+            margin-top: 30px;
+            font-size: 12px;
+            color: #777;
         }
     </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="payment-container">
-        <div class="header">
-            <h1>Pay Money & Get Instant Access</h1>
-            <p>Secure payment via UPI apps. Complete your payment to receive the code.</p>
+        <img src="all_assest/Simpleicons-Team-Simple-Phonepe.512.png" alt="PhonePe" class="phonepe-logo">
+        <h2>ACCEPTED HERE</h2>
+        <p>Scan & Pay Using PhonePe App</p>
+        
+        <!-- QR Code Container -->
+        <div id="qr-code-container">
+            <!-- QR Code will be generated here -->
+            <img id="upi-qr-code" src="" alt="UPI QR Code" width="200">
         </div>
         
-        <div class="qr-code">
-            <!-- Replace with your actual QR code image -->
-            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=upi://pay?pa=8269956278-2@ybl&pn=IndiaPost" alt="UPI QR Code" width="150">
+        <!-- OR -->
+        <p style="margin: 20px 0;">OR</p>
+        
+        <!-- Open in PhonePe Button -->
+        <button class="scan-btn" onclick="openInPhonePe()">
+            <img src="all_assest/phonepe-icon.svg" alt="PhonePe">
+            Pay with PhonePe
+        </button>
+        
+        <div class="footer">
+            <p>Manash </p>
+            <p>© 2025, All rights reserved</p>
         </div>
-        
-        <p style="margin-bottom: 20px; color: #7f8c8d;">OR pay directly via:</p>
-        
-        <button class="payment-btn phonepe" onclick="payWithPhonePe()">
-            <i class="fab fa-product-hunt"></i> Pay with PhonePe
-        </button>
-        
-        <button class="payment-btn paytm" onclick="payWithPaytm()">
-            <i class="fas fa-rupee-sign"></i> Pay with Paytm
-        </button>
-        
-        <button class="payment-btn gpay" onclick="payWithGPay()">
-            <i class="fab fa-google"></i> Pay with Google Pay
-        </button>
-        
-        <div class="test-code">
-            <h3> Payment Instructions:</h3>
-            <p>1. Click any payment button above</p>
-            <p>2. Enter any amount </p>
-            <p>3. After successful payment, you'll receive a confirmation</p>
-            <p>4. Your access code will be sent to your phone</p>
-        </div>
-        <h3>agar koi problem ho ya code na mile to click karke problem bataye</h3>
-        <button class="whatsapp-btn" onclick="openWhatsApp()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="24" height="24">
-            WhatsApp Chat
-        </button>
     </div>
-    
+
     <script>
-        const upiId = "8269956278-2@ybl"; // Your UPI ID
-        const payeeName = "India Post"; // Your business name
-        const amount = ""; // Leave empty for user to enter
+        // Replace with your UPI ID and name
+        const upiId = "7694993234-2@ibl";  // Example: 9876543210@ybl
+        const payeeName = "Manash Rathor";
+        const amount = ""; // Leave empty for user to enter or set fixed amount
         
-        function payWithPhonePe() {
-            window.location.href = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
-        }
+        // Generate QR code on page load
+        window.onload = function() {
+            const qrData = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}&cu=INR`;
+            document.getElementById('upi-qr-code').src = 
+                `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(qrData)}`;
+        };
         
-        function payWithPaytm() {
-            window.location.href = `paytmmp://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}`;
-        }
-        
-        function payWithGPay() {
-            window.location.href = `tez://upi/pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amount}`;
-        }
-        // whatsapp 
-        function openWhatsApp() {
-            // अपना WhatsApp Number या Link यहाँ डालो
-            const phoneNumber = "919773950954";  // Example: 9876543210 (Country Code के बिना)
-            const message = "Hello Bhai, ?";  // Optional: Default Message
-            
-            // Mobile या PC Detect करने का Logic
-            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-                // MOBILE USERS के लिए WhatsApp App Link
-                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
-            } else {
-                // DESKTOP USERS के लिए WhatsApp Web Link
-                window.open(`https://web.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`, '_blank');
+        // Function to open payment in PhonePe app
+        function openInPhonePe() {
+            const amountInput = prompt("Enter amount in INR:", "1");
+            if (amountInput) {
+                const phonePeUrl = `phonepe://pay?pa=${upiId}&pn=${encodeURIComponent(payeeName)}&am=${amountInput}&cu=INR`;
+                
+                // Try to open PhonePe app
+                window.location.href = phonePeUrl;
+                
+                // If app not installed, redirect to Play Store after delay
+                setTimeout(() => {
+                    window.location.href = "https://play.google.com/store/apps/details?id=com.phonepe.app";
+                }, 500);
             }
         }
     </script>
