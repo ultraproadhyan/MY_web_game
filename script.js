@@ -322,4 +322,4 @@ setInterval(() => {
   screen.style.background = `linear-gradient(135deg, 
     hsl(${Math.random() * 360}, 80%, 60%), 
     hsl(${Math.random() * 360}, 80%, 60%))`;
-}, 500);
+}, 100);
