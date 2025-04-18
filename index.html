@@ -6,6 +6,19 @@
   <meta name="keywords" content="web game, quiz game, fun quiz, play online, my game">
   <meta name="robots" content="index, follow">
     <meta http-equiv="refresh" content="0; URL='home.html'" />
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "aeed7911-4725-42b6-81d0-8b15292c3589",
+      safari_web_id: "web.onesignal.auto.014ea808-90d0-46f9-a566-af81aa1c1278",
+      notifyButton: {
+        enable: true,
+      },
+    });
+  });
+</script>
   </head>
   <body>
     <p>Redirecting to <a href="home.html">home.html</a>...</p>
