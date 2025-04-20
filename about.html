@@ -1,167 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Us</title>
-    <link rel="icon" type="image/png" href="/all_assest/logo2.png"/>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"/>
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPIC GAME - Player Guide</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+       
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-    <!-- 🖥️ Desktop Navbar -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <img class="logo" src="all_assest/logo2.png" alt="logo" />
-            <div class="app-name">My_Web_Game</div>
+      <!-- Desktop Top Navbar -->
+      <nav id="gaming-navbar">
+        <div id="logo-container">
+            <span id="logo-text">MY WEB GAME</span>
         </div>
-        <div class="nav-links">
-            <a href="home.html" ><i class="fas fa-home"></i> Home</a>
-            <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
-            <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
-            <a href="about.html" class="active"><i class="fas fa-info-circle"></i> About</a>
+        
+        <div id="nav-links">
+            <a href="home.html" class="nav-link "><i class="fas fa-gamepad"></i> GAME</a>
+            <a href="videos.html" class="nav-link"><i class="fas fa-video"></i> VIDEO</a>
+            <a href="morecoomingpage.html" class="nav-link"><i class="fas fa-ellipsis-h"></i> MORE</a>
+            <a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> ABOUT</a>
         </div>
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
-    <!-- 📱 Mobile Bottom Navbar -->
-    <nav class="mobile-navbar">
-        <ul class="mobile-nav-links">
-            <li><a href="home.html" ><i class="fas fa-home"></i></a></li>
-            <li><a href="videos.html"><i class="fas fa-video"></i></a></li>
-            
-            <!-- Center Go Button -->
-            <li class="add-button">
-                <a id="dynamicButton" href="#">Go</a>
-            </li>
-
-            <li><a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i></a></li>
-            <li><a href="about.html" class="active"><i class="fas fa-info-circle"></i></a></li>
-        </ul>
+    <!-- Mobile Bottom Bar -->
+    <nav id="mobile-bottom-bar">
+        <a href="home.html" class="nav-link "><i class="fas fa-gamepad"></i> GAME</a>
+        <a href="videos.html" class="nav-link"><i class="fas fa-video"></i> VIDEO</a>
+        <a href="morecoomingpage.html" class="nav-link"><i class="fas fa-ellipsis-h"></i> MORE</a>
+        <a href="about.html" class="nav-link active"><i class="fas fa-info-circle"></i> ABOUT</a>
     </nav>
 
-    <!-- Main Content -->
-    
-       
-            <div class="about-quiz-container">
-                <div class="quiz-header">
-                    <div class="quiz-logo">
-                        <span class="quiz-icon">🎯</span>
-                        <h1>Daily Quiz Battle</h1>
-                    </div>
-                    <div class="quiz-tagline">5 रुपये लगाओ, हजारों कमाओ!</div>
-                </div>
+    <div id="guide-container">
+        <header id="guide-header">
+            <h1 id="guide-title">How To Play</h1>
+            <p id="guide-subtitle">Master the game with this pro guide</p>
+        </header>
 
-                <div class="quiz-about-section">
-                    <div class="about-card">
-                        <h2><span class="hindi">नमस्ते दोस्तों!</span> Welcome to Daily Quiz Battle</h2>
-                        <p class="hindi-english">
-                            यह एक ऐसा प्लेटफॉर्म है जहां आप रोज सिर्फ <strong>₹5</strong> में क्विज खेलकर <strong>real cash जीत</strong> सकते हैं! 
-                            घर बैठे-बैठे पैसा कमाने का सबसे तेज़, आसान और इमानदार तरीका।
-                        </p>
-                    </div>
-
-                    <!-- Features Section -->
-                    <div class="feature-cards">
-                        <div class="feature-card">
-                            <div class="feature-icon">🎯</div>
-                            <h3>Daily Quiz Battle क्या है?</h3>
-                            <ul class="hindi-english">
-                                <li>हर दिन रात <strong>7 से 8 बजे</strong> के बीच एक क्विज टेस्ट</li>
-                                <li>₹5 एंट्री फीस के बाद <strong>WhatsApp पर कोड</strong> मिलेगा</li>
-                                <li>कोड शेयर करने पर प्राइज बंट जाएगा</li>
-                                <li>फेयर प्ले, फुल प्राइज!</li>
-                            </ul>
-                        </div>
-
-                        <div class="feature-card prize-card">
-                            <div class="feature-icon">🪙</div>
-                            <h3>पैसा बंटवारा</h3>
-                            <div class="prize-distribution">
-                                <div class="prize-tier"><span class="tier">🥇 1st</span></div>
-                                <div class="prize-tier"><span class="tier">🥈 2nd</span></div>
-                                <div class="prize-tier"><span class="tier">🥉 3rd</span></div>
-                            </div>
-                        </div>
-
-                        <div class="feature-card safety-card">
-                            <div class="feature-icon">🔐</div>
-                            <h3>Privacy & Safety</h3>
-                            <ul class="hindi-english">
-                                <li>नाम, नंबर या जानकारी किसी के साथ <strong>शेयर नहीं</strong></li>
-                                <li>WhatsApp पर सिर्फ कोड, कोई स्पैम नहीं</li>
-                                <li>जीती हुई राशि <strong>तुरंत UPI</strong> पर भेजी जाती है</li>
-                                <li>सिस्टम <strong>चीटिंग</strong> पकड़ लेता है</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Steps Section -->
-                    <div class="steps-section">
-                        <h2>कैसे खेलते हैं? पूरा सिस्टम समझ लो:</h2>
-                        <div class="steps-container">
-                            <div class="step"><div class="step-number">1</div><p>₹5 जमा करो और नाम-नंबर भेजो</p></div>
-                            <div class="step"><div class="step-number">2</div><p>WhatsApp पर कोड मिलेगा</p></div>
-                            <div class="step"><div class="step-number">3</div><p>7-8 बजे के बीच कोड डालकर क्विज पूरा करो</p></div>
-                            <div class="step"><div class="step-number">4</div><p>रिजल्ट आएगा - टॉप 3 जीतेंगे</p></div>
-                            <div class="step"><div class="step-number">5</div><p>विजेता का नाम और फोटो वेबसाइट पर</p></div>
-                            <div class="step"><div class="step-number">6</div><p>उसी दिन पैसा भेज दिया जाएगा</p></div>
-                        </div>
-                    </div>
-
-                    <!-- Rules Section -->
-                    <div class="rules-section">
-                        <h2>⚡ Important Rules - ध्यान से पढ़ लें:</h2>
-                        <div class="rules-grid">
-                            <div class="rule-card"><div class="rule-icon">⚠️</div><p>कोड शेयर करने पर इनाम बंट जाएगा</p></div>
-                            <div class="rule-card"><div class="rule-icon">📸</div><p>विजेताओं के फोटो और प्रूफ वेबसाइट पर</p></div>
-                            <div class="rule-card"><div class="rule-icon">🔞</div><p>सिर्फ 18+ लोग खेल सकते हैं</p></div>
-                            <div class="rule-card"><div class="rule-icon">🚫</div><p>फेक नाम/नंबर पर बैन हो सकते हैं</p></div>
-                        </div>
-                    </div>
-
-                    <!-- Contact Section -->
-                    <div class="contact-section">
-                        <h2>📞 Contact Us</h2>
-                        <div class="contact-methods">
-                            <a href="https://wa.me/7694993234" class="contact-button whatsapp"><span>WhatsApp</span> [7694993234]</a>
-                            <a href="mailto:mywebgame565@gmail.com" class="contact-button email"><span>Email</span> mywebgame565@gmail.com</a>
-                            <a href="https://www.instagram.com/crazy_helper51/?hl=en" class="contact-button website"><span>instagram</span> ------------------</a>
-                        </div>
-                    </div>
-
-                    <!-- Final Tagline -->
-                    <div class="final-tagline">
-                        <h3>🤝 हमारा वादा - इमानदारी से गेम, इमानदारी से इनाम</h3>
-                        <p class="hindi-english">
-                            <strong>रोज़ खेलो, रोज़ जीतो!</strong> यह प्लेटफॉर्म उन लोगों के लिए है जो दिमाग लगाते हैं और इनाम के हकदार हैं।
-                            बिना लक के, बिना बकवास के - सिर्फ स्पीड और नॉलेज का गेम।
-                        </p>
-                        <div class="tagline-boxes">
-                            <div class="tagline-box">"5 रुपये का दिमाग लगाओ, हज़ार कमाओ!"</div>
-                            <div class="tagline-box">"कोड मत बाँटो, पैसा कमाओ!"</div>
-                            <div class="tagline-box">"घर बैठे रिवॉर्ड बनो"</div>
-                        </div>
-                    </div>
-                </div>
+        <section id="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h2 class="step-title">Registration</h2>
+                <p class="step-content">
+                    First, pay the fee, and then enter your name, phone number, and age . Only players aged 18+ can participate. Your details will be securely stored.
+                    <p>पहले फीस भुगतान करें,  विजिट करते समय अपना नाम, फोन नंबर और आयु दर्ज करें। केवल 18 वर्ष और उससे अधिक आयु के खिलाड़ी ही भाग ले सकते हैं। आपकी जानकारी सुरक्षित रूप से संग्रहित की जाएगी।</p>
+                </p>
             </div>
-        </div>
+
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h2 class="step-title">Gameplay</h2>
+                <p class="step-content">
+                    In this game, you have to click the circle within a limited time, which increases your score. Based on your score, you win the game.
+                    <p>इस खेल में लिमिटेड टाइम में सर्कल (गोलाकार) को क्लिक करना होता है, जिससे आपका स्कोर बढ़ता है। आपके स्कोर के आधार पर ही आपको जीत मिलती है।</p>
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h2 class="step-title">Scoring</h2>
+                <p class="step-content">
+                    The more circles you hit, the higher your chances of winning!.
+                    <p>जितने ज़्यादा सर्कल हिट करेंगे, जीतने के चांस उतने ही बढ़ेंगे!</p>
+                </p>
+            </div>
+
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h2 class="step-title">Winners</h2>
+                <p class="step-content">
+                    Players compete in groups of 5. Once all 5 players complete the game, the player with the highest score is declared the winner. Please note, the winner announcement may take a little time.
+
+                    Important: Start your next game only after receiving your prize money — this increases your chances of making more profit.
+                    <p>खिलाड़ी 5-5 के ग्रुप में खेलते हैं। जब सभी 5 खिलाड़ी गेम पूरा कर लेते हैं, तो सबसे अधिक स्कोर करने वाले को विजेता घोषित किया जाता है। विजेता की घोषणा में थोड़ा समय लग सकता है।  
+
+                        ध्यान दें: इनाम की राशि मिलने के बाद ही अगला गेम शुरू करें — इससे आपको ज़्यादा मुनाफा मिलेगा।</p>
+                </p>
+            </div>
+
+
+            <div class="step-card">
+                <div class="step-number">5</div>
+                <h2 class="step-title">Leaderboard</h2>
+                <p class="step-content">
+                    Check the winners' board to see past champions. 
+                    Top players of each 5-player group are displayed with their scores.
+                    <p>विजेताओं की लिस्ट देखने के लिए विनर्स बोर्ड चेक करें।  
+                        हर 5-खिलाड़ियों वाले ग्रुप के टॉप खिलाड़ी उनके स्कोर के साथ दिखाए जाते हैं।</p>
+                </p>
+            </div>
+        </section>
+
+        <section id="rules-section">
+            <h2 id="rules-title">Game Rules</h2>
+            <ul id="rules-list">
+                <li>You must be 18 or older to play</li>
+                
+                <li>Scores are calculated based on score and survival time</li>
+                <li>Winners are determined every 5 players</li>
+                <li>Any attempt to cheat will result in disqualification</li>
+                <li>Top score in each group of 5 players wins</li>
+                
+            </ul>
+        </section>
+
+        <section id="winner-info">
+            <h2 id="winner-title">About Winners</h2>
+            <div id="winner-content">
+                <p>
+                    Our system automatically groups players into batches of 5. When you finish your game, 
+                    you'll be placed in the next available group. If you're the first player in a new group, 
+                    you'll need to wait until 4 more players complete the game to see who won.
+                </p>
+                <p>
+                    Winners are determined purely by score - the highest score in each 5-player group wins. 
+                    All winners are recorded in our hall of fame with their name, score, and game date.
+                </p>
+                <p>
+                    Good luck and may the best gamer win!
+                </p>
+            </div>
+        </section>
     </div>
 
-<script src="script.js"></script>
-<script>
-        
-    document.getElementById('dynamicButton').href = BUTTON_CONFIG.link;
-</script>
+    <script>
+        // Simple animation for step cards
+        document.querySelectorAll('.step-card').forEach((card, index) => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
+            }, 100 * index);
+        });
+
+        // Mobile touch detection
+        if ('ontouchstart' in window) {
+            document.getElementById('guide-subtitle').textContent += ' (Mobile Touch Controls Enabled)';
+        }
+    </script>
 </body>
 </html>
