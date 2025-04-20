@@ -2,215 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MY WEB GAME</title>
-    <link rel="icon" type="image/png" href="/all_assest/logo2.png">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>EPIC GAME | PLAY NOW</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
 </head>
 <body>
-    <!-- 🌐 Desktop Navbar -->
-    <nav class="navbar">
-        <div class="logo-container">
-            <img class="logo" src="all_assest/logo2.png" alt="logo">
-            <div class="app-name">My_Web_Game</div>
+    <!-- Desktop Top Navbar -->
+    <nav id="gaming-navbar">
+        <div id="logo-container">
+            <span id="logo-text">MY WEB GAME</span>
         </div>
-
-        <div class="nav-links">
-            <a href="home.html" class="active"><i class="fas fa-home"></i> Home</a>
-            <a href="videos.html"><i class="fas fa-video"></i> Videos</a>
-            <a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i> More</a>
-            <a href="about.html"><i class="fas fa-info-circle"></i> About</a>
+        
+        <div id="nav-links">
+            <a href="home.html" class="nav-link active"><i class="fas fa-gamepad"></i> GAME</a>
+            <a href="videos.html" class="nav-link"><i class="fas fa-video"></i> VIDEO</a>
+            <a href="morecoomingpage.html" class="nav-link"><i class="fas fa-ellipsis-h"></i> MORE</a>
+            <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> ABOUT</a>
         </div>
-
-        <button class="mobile-menu-btn">
-            <i class="fas fa-bars"></i>
-        </button>
     </nav>
 
-    <!-- 📱 Mobile Bottom Navbar (Stylish) -->
-    <nav class="mobile-navbar">
-        <ul class="mobile-nav-links">
-            <li><a href="home.html" class="active"><i class="fas fa-home"></i></a></li>
-            <li><a href="videos.html"><i class="fas fa-video"></i></a></li>
-
-            <!-- Center Add Button (GIF-style) -->
-            <li class="add-button">
-                <a class="dynamic-link" href="#">Go</a>
-            </li>
-
-            <li><a href="morecoomingpage.html"><i class="fas fa-ellipsis-h"></i></a></li>
-            <li><a href="about.html"><i class="fas fa-info-circle"></i></a></li>
-        </ul>
+    <!-- Mobile Bottom Bar -->
+    <nav id="mobile-bottom-bar">
+        <a href="home.html" class="nav-link active"><i class="fas fa-gamepad"></i> GAME</a>
+        <a href="videos.html" class="nav-link"><i class="fas fa-video"></i> VIDEO</a>
+        <a href="morecoomingpage.html" class="nav-link"><i class="fas fa-ellipsis-h"></i> MORE</a>
+        <a href="about.html" class="nav-link"><i class="fas fa-info-circle"></i> ABOUT</a>
     </nav>
 
-    <div class="cinematic-slider">
-        <div class="slider-track" id="sliderTrack">
-            <!-- Slide 1 -->
-            <div class="slide active">
-                <img src="all_assest/slide1.PNG" alt="Cinematic">
-                <div class="slide-content">
-                    <h2>🎯 Daily Quiz Battle – Jeeto Cash Rozana! 💸</h2>
-                    <a href="#" class="btn dynamic-link">ready for Test</a>
-                </div>
-            </div>
-            
-            <!-- Slide 2 -->
-            <div class="slide">
-                <img src="all_assest/SLIDE2.png" alt="Cinematic">
-                <div class="slide-content">
-                    <h2>Entry Fee: ₹5 only</h2>
-                    <a href="#" class="btn dynamic-link">ready for Test</a>
-                </div>
-            </div>
-            
-            <!-- Slide 3 -->
-            <div class="slide">
-                <img src="all_assest/slide3.png" alt="Cinematic">
-                <div class="slide-content">
-                    <h2>Daily Test Timing: 7 PM – 8 PM</h2>
-                    <a href="#" class="btn dynamic-link">ready for Test</a>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Navigation -->
-        <div class="slider-nav">
-            <button class="nav-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
-            <button class="nav-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
-        </div>
-        
-        <!-- Pagination -->
-        <div class="slider-pagination" id="pagination">
-            <button class="pagination-dot active"></button>
-            <button class="pagination-dot"></button>
-            <button class="pagination-dot"></button>
-        </div>
-    </div>
-
-
-    <!-- Demo Content -->
-    <div class="content">
-        <a href="https://payments.cashfree.com/forms?code=my-web-game" class="button-85" role="button">
-    click for code
-</a>
-        <h1 class="wel">Welcome to MWG</h1>
-        <div id="main-container">
-            <h1 id="title">🎯 Daily Quiz Battle – Jeeto Cash Rozana! 💸</h1>
-        
-            <div class="highlight-box">
-                <p><span class="important">Entry Fee:</span> ₹5 only</p>
-                <p><span class="important">Daily Test Timing:</span> 7 PM – 8 PM</p>
-                <p><span class="important">Winners:</span> Top 3 Participants</p>
-                <p><span class="important">Prize Distribution:</span></p>
-                <ul>
-                    <li>🥇 1st – </li>
-                    <li>🥈 2nd – </li>
-                    <li>🥉 3rd – </li>
-                </ul>
-            </div>
-        
-            <h2 class="section-title">🧠 Kaise Kaam Karta Hai?</h2>
-            <ul>
-                <li><strong>Entry Code:</strong> Har user ko WhatsApp pe ek unique code diya jayega.</li>
-                <li><strong>Test Time:</strong> Roz shaam 7 baje se 8 baje ke beech test hoga.</li>
-                <li><strong>Code Validity:</strong> Code sirf ek din ke liye valid hoga.</li>
-                <li><strong>Code Sharing Rule:</strong> Agar kisi ne apna code share kiya, to prize bhi shared hoga.</li>
-                <li><strong>Winners Announcement:</strong> Sham tak website pe 3 winners ke photo + naam honge.</li>
-                <li><strong>Cash Transfer:</strong> Jeetne wale ke account me turant paisa bheja jayega.</li>
-            </ul>
-        
-            <div class="highlight-box note">
-                ⚠ Note: Be fair, don't share your code. Smart bano, top 3 me aao aur cash jeeto rozana!
-            </div>
-        </div>
-        
-        <!-- Button that redirects dynamically -->
-        <button class="button-86 dynamic-link" onclick="window.location.href='https://cartoon.pythonanywhere.com/'" role="button">
-            Get start for Test
-        </button>
-    </div>
-
-    <!-- table of winners -->
-    <div class="table-container">
-        <div class="table-header">
-            <div class="table-cell">Photo</div>
-            <div class="table-cell">Name</div>
-            <div class="table-cell">Time Taken</div>
-            <div class="table-cell">Date</div>
-            <div class="table-cell">price</div>
-            <div class="table-cell">Position</div>
-        </div>
-
-        <div class="table-body" id="table-body">
-            <!-- Rows added via JavaScript -->
-        </div>
-    </div>
-
-    <!-- Comment box -->
-    <div class="comment-box-style">
-        <h2 class="heading-style">Leave a Comment</h2>
-        <textarea id="commentInput" placeholder="Write your comment here (max 200 words)"></textarea>
-        <div class="word-count-style">Words: <span id="wordCount">0</span>/200</div>
-        <div class="error-style" id="errorMsg"></div>
-        
-        <div class="emoji-picker-style">
-            <strong>Add Emoji: </strong>
-            <button class="emoji-btn-style" onclick="addEmoji('😊')">😊</button>
-            <button class="emoji-btn-style" onclick="addEmoji('❤️')">❤️</button>
-            <button class="emoji-btn-style" onclick="addEmoji('😂')">😂</button>
-            <button class="emoji-btn-style" onclick="addEmoji('👍')">👍</button>
-            <button class="emoji-btn-style" onclick="addEmoji('🙏')">🙏</button>
-        </div>
-        
-        <button class="submit-btn" id="submitBtn">Post Comment</button>
-    </div>
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+    <div class="scanlines"></div>
     
-    <div class="comment-box-style">
-        <h2 class="heading-style">Comments (<span id="commentCount">0</span>/100)</h2>
-        <div id="commentsContainer">
-            <!-- Comments will appear here -->
+    <!-- Main Content Container -->
+    <div class="main-content">
+        <div class="container">
+            <div class="gamepad-icon">🎮</div>
+            <img src="all_assest/logo2.png" class="game-logo" alt="EPIC GAME">
+            <p class="tagline">READY FOR THE ULTIMATE CHALLENGE?</p>
+           
+            <a href="https://payments.cashfree.com/forms?code=my-web-game" class="play-btn" id="playButton" role="button">
+                PRESS START
+            </a>
         </div>
     </div>
-    <footer>
-    <ul>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        <li><a href="cancellation-refund.html">Cancellation and Refund</a></li>
-        <li><a href="shipping-delivery.html">Shipping and Delivery</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-    </ul>
-</footer>
-
+    <!-- this for table  -->
+    <div id="gaming-leaderboard">
+        <div id="leaderboard-header">
+            <h2 id="leaderboard-title">Today's Champions</h2>
+        </div>
+        
+        <table id="winners-table">
+            <thead>
+                <tr>
+                    <th>Player Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="champion">
+                    <td>manish </td>
+                    <td>29</td>
+                </tr>
+               
+            </tbody>
+        </table>
+    </div>
+    <footer class="foot">
+        <ul>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+            <li><a href="cancellation-refund.html">Cancellation and Refund</a></li>
+            <li><a href="shipping-delivery.html">Shipping and Delivery</a></li>
+            <li><a href="contact-us.html">Contact Us</a></li>
+        </ul>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
-
-    <!-- JavaScript to change all buttons' links dynamically -->
-    <script>
-        // Function to update all dynamic links
-        function updateAllLinks(newLink) {
-            var buttons = document.querySelectorAll('a.dynamic-link, button.dynamic-link');
-
-            buttons.forEach(function(button) {
-                if (button.tagName.toLowerCase() === 'a') {
-                    button.setAttribute('href', newLink); // Update link for <a> tags
-                } else if (button.tagName.toLowerCase() === 'button') {
-                    button.onclick = function() {
-                        window.location.href = newLink; // Update link for <button> tags
-                    };
-                }
-            });
-        }
-
-        // Example: Change all links after 3 seconds
-        setTimeout(function() {
-            updateAllLinks('https://cartoon.pythonanywhere.com/'); // Update link
-        }, 500); // 3 seconds delay
-    </script>
 </body>
 </html>
