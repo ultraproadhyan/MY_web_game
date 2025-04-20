@@ -1,36 +1,250 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>My Web Game - Play Online Quiz</title>
-  <meta name="description" content="Play online quiz games with fun and challenge. No signup needed. Instant play!">
-  <meta name="keywords" content="web game, quiz game, fun quiz, play online, my game">
-  <meta name="robots" content="index, follow">
-    <meta http-equiv="refresh" content="0; URL='home.html'" />
-    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "aeed7911-4725-42b6-81d0-8b15292c3589",
-      safari_web_id: "web.onesignal.auto.014ea808-90d0-46f9-a566-af81aa1c1278",
-      notifyButton: {
-        enable: true,
-      },
-    });
-  });
-</script>
-  </head>
-  <body>
-    <p>Redirecting to <a href="home.html">home.html</a>...</p>
-    <footer>
-    <ul>
-        <li><a href="privacy-policy.html">Privacy Policy</a></li>
-        <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
-        <li><a href="cancellation-refund.html">Cancellation and Refund</a></li>
-        <li><a href="shipping-delivery.html">Shipping and Delivery</a></li>
-        <li><a href="contact-us.html">Contact Us</a></li>
-    </ul>
-</footer>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ EPIC GAME LOADING...</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  </body>
+        body {
+            background: #000;
+            overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            height: 100vh;
+            width: 100vw;
+        }
+
+        /* ===== SPLASH CONTAINER ===== */
+        #splash-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, #0a0a2a 0%, #000 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+
+        /* ===== 3D FLOATING LOGO ===== */
+        #splash-logo {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 40px;
+            filter: drop-shadow(0 0 15px #00f7ff);
+            animation: float 3s ease-in-out infinite, glow 2s alternate infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateY(10deg); }
+        }
+
+        @keyframes glow {
+            0% { filter: drop-shadow(0 0 10px #00f7ff); }
+            100% { filter: drop-shadow(0 0 20px #0066ff); }
+        }
+
+        /* ===== DYNAMIC LOADING BAR ===== */
+        #splash-loader {
+            width: 70%;
+            max-width: 400px;
+            height: 8px;
+            background: rgba(0, 50, 80, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        #splash-progress {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #00f7ff, #0066ff);
+            border-radius: 10px;
+            transition: width 0.5s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #splash-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 2s infinite;
+        }
+
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* ===== % COUNTER ===== */
+        #splash-percent {
+            font-size: 1.5rem;
+            color: #00f7ff;
+            margin-bottom: 20px;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 0 0 10px #00f7ff;
+        }
+
+        /* ===== TYPING TEXT EFFECT ===== */
+        #splash-text {
+            color: #00f7ff;
+            font-size: 1.2rem;
+            text-align: center;
+            max-width: 80%;
+            height: 60px;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 0 0 5px #0066ff;
+        }
+
+        /* ===== PARTICLE BACKGROUND ===== */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        /* ===== GLITCH EFFECT (ON LOAD COMPLETE) ===== */
+        .glitch-effect {
+            animation: glitch 0.5s linear 2;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+
+        /* ===== RESPONSIVE ADJUSTMENTS ===== */
+        @media (max-width: 768px) {
+            #splash-logo { width: 150px; height: 150px; }
+            #splash-text { font-size: 0.9rem; }
+            #splash-percent { font-size: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- ===== SPLASH SCREEN ===== -->
+    <div id="splash-container">
+        <!-- Particle Background -->
+        <div id="particles-js"></div>
+
+        <!-- 3D Floating Logo -->
+        <img id="splash-logo" src="all_assest/logo2.png" alt="EPIC GAME">
+
+        <!-- % Counter -->
+        <div id="splash-percent">0%</div>
+
+        <!-- Dynamic Loading Bar -->
+        <div id="splash-loader">
+            <div id="splash-progress"></div>
+        </div>
+
+        <!-- Cyberpunk Typing Text -->
+        <div id="splash-text"></div>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // ===== PARTICLE BACKGROUND =====
+        particlesJS("particles-js", {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: "#00f7ff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { enable: true, distance: 150, color: "#00f7ff", opacity: 0.3, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+
+        // ===== LOADING SIMULATION =====
+        const splashText = document.getElementById("splash-text");
+        const splashPercent = document.getElementById("splash-percent");
+        const splashProgress = document.getElementById("splash-progress");
+        const splashContainer = document.getElementById("splash-container");
+
+        // Loading Messages (Cycles Randomly)
+        const loadingMessages = [
+            "INITIALIZING GAME ENGINE...",
+            "LOADING TEXTURES...",
+            "CONNECTING TO SERVER...",
+            "OPTIMIZING PERFORMANCE...",
+            "PREPARING EPIC ADVENTURE...",
+            "LOADING ASSETS...",
+            "ALMOST THERE..."
+        ];
+
+        let progress = 0;
+        const loadingInterval = setInterval(() => {
+            progress += Math.random() * 10;
+            if (progress > 100) progress = 100;
+
+            // Update Progress Bar
+            splashProgress.style.width = `${progress}%`;
+            splashPercent.textContent = `${Math.floor(progress)}%`;
+
+            // Change Loading Text Every 20%
+            if (progress % 20 < 1) {
+                const randomMsg = loadingMessages[Math.floor(Math.random() * loadingMessages.length)];
+                splashText.textContent = randomMsg;
+            }
+
+            // Complete Loading at 100%
+            if (progress >= 100) {
+                clearInterval(loadingInterval);
+                splashContainer.classList.add("glitch-effect");
+                
+                // Redirect to Game Page (Replace with your game URL)
+                setTimeout(() => {
+                    window.location.href = "home.html";
+                }, 1000);
+            }
+        }, 200);
+    </script>
+     </head>
+     <body>
+       <p>Redirecting to <a href="home.html">home.html</a>...</p>
+       <footer>
+       <ul>
+           <li><a href="privacy-policy.html">Privacy Policy</a></li>
+           <li><a href="terms-and-conditions.html">Terms and Conditions</a></li>
+           <li><a href="cancellation-refund.html">Cancellation and Refund</a></li>
+           <li><a href="shipping-delivery.html">Shipping and Delivery</a></li>
+           <li><a href="contact-us.html">Contact Us</a></li>
+       </ul>
+   </footer>
+   
+</body>
 </html>
