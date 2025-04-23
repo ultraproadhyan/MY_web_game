@@ -163,7 +163,7 @@ body {
 }
 
 .game-logo {
-    width: 100%;
+    width: 30%;
     max-width: 500px;
     height: auto;
     margin: 0 auto 5vh;
@@ -403,6 +403,7 @@ body {
 }
 
 #game-logo {
+   width: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
