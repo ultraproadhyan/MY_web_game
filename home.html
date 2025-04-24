@@ -6,6 +6,83 @@
     <title>EPIC GAME | PLAY NOW</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <!-- HTML HEAD Section -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style id="game-banner-css">
+    /* ===== GAME BANNER STYLES ===== */
+    #game-banner {
+        background: #12122a;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 0 30px rgba(0, 247, 255, 0.3);
+        border: 1px solid rgba(0, 247, 255, 0.2);
+        text-align: center;
+        margin: 20px auto;
+        margin-top: 6%;
+        max-width: 400px;
+    }
+
+    #game-title {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 2.5rem;
+        background: linear-gradient(90deg, #00f7ff, #ff00aa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        margin-bottom: 10px;
+        text-shadow: 0 0 15px rgba(0, 247, 255, 0.5);
+        letter-spacing: 2px;
+        line-height: 1.2;
+    }
+
+    #game-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.2rem;
+        color: #f0f0ff;
+        margin-bottom: 20px;
+        opacity: 0.9;
+    }
+
+    #timing-info {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid #ff00aa;
+        border-radius: 10px;
+        padding: 15px;
+        margin: 20px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    #timing-info::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 0, 170, 0.1), transparent);
+        animation: timingGlow 3s infinite;
+    }
+
+    #timing-text {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.85rem;
+        line-height: 1.5;
+        color: #f0f0ff;
+        position: relative;
+        z-index: 2;
+    }
+
+    #timing-text strong {
+        color: #00f7ff;
+    }
+
+    @keyframes timingGlow {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+    }
+</style>
 </head>
 <body>
     <!-- Desktop Top Navbar -->
@@ -33,7 +110,20 @@
     <!-- Animated Background -->
     <div id="particles-js"></div>
     <div class="scanlines"></div>
+     <!-- HTML BODY Section (Jahan pe show karna hai) -->
+<div id="game-banner">
+    <h1 id="game-title">5 DEKE 20 JEETO!</h1>
+    <p id="game-subtitle">Jitne log judenge, utne chance badenge!</p>
     
+    <div id="timing-info">
+        <p id="timing-text">
+            <strong>⚠️ GAME TIMING:</strong><br>
+            यह गेम 24 घंटे एक्टिव है, आप कभी भी खेल सकते हैं!<br>
+            <strong>WINNER LIST & PRIZE:</strong><br>
+            (सुबह 10:00AM - रात 10:00PM) तक दिखेगा
+        </p>
+    </div>
+</div>
     <!-- Main Content Container -->
     <div class="main-content">
         <div class="container">
@@ -89,5 +179,25 @@
     
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
+         <script id="game-banner-js">
+        // ===== ANIMATION EFFECTS =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const timingInfo = document.getElementById('timing-info');
+            
+            // Flash animation on load
+            timingInfo.style.opacity = '0';
+            let opacity = 0;
+            const fadeIn = setInterval(() => {
+                opacity += 0.05;
+                timingInfo.style.opacity = opacity;
+                if (opacity >= 1) clearInterval(fadeIn);
+            }, 50);
+            
+            // Continuous glow effect
+            setInterval(() => {
+                timingInfo.style.boxShadow = `0 0 15px rgba(255, 0, 170, ${Math.random() * 0.5 + 0.3})`;
+            }, 1000);
+        });
+    </script>
 </body>
 </html>
